@@ -151,7 +151,7 @@ public class LessonTwoRenderer implements GLSurfaceView.Renderer {
                 };
 
         // R, G, B, A
-        // 各个面的
+        // 各个面的颜色
         final float[] cubeColorData =
                 {
                         // Front face (red)
