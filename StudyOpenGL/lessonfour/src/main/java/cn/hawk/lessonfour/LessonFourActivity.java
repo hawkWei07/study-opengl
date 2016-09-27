@@ -22,7 +22,7 @@ public class LessonFourActivity extends AppCompatActivity {
         final boolean supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000;
         if (supportsEs2) {
             mGLSurfaceView.setEGLContextClientVersion(2);
-            mGLSurfaceView.setRenderer(new LessonFourRenderer());
+            mGLSurfaceView.setRenderer(new LessonFourRenderer(this));
         } else {
             return;
         }
