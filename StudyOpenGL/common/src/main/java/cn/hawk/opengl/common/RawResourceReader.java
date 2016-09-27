@@ -12,6 +12,13 @@ import java.io.InputStreamReader;
  */
 
 public class RawResourceReader {
+    /**
+     * Read the text object from raw resource.
+     *
+     * @param context
+     * @param resourceId
+     * @return
+     */
     public static String readTextFileFromRawResource(final Context context,
                                                      final int resourceId) {
         final InputStream inputStream = context.getResources().openRawResource(
