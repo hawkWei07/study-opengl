@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LessonFive</string>
+    <string name="lesson_five_startup_toast">Tap the screen to switch between blended and normal mode.</string>
+</resources>
