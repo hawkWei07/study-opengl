@@ -28,7 +28,7 @@ public class LessonFourRenderer implements GLSurfaceView.Renderer {
 
     private final Context mActivityContext;
 
-    private boolean blending = true;
+    private boolean blending = false;
 
     /**
      * Store the model matrix. This matrix is used to move models from object space (where each model can be thought
@@ -473,7 +473,7 @@ public class LessonFourRenderer implements GLSurfaceView.Renderer {
                 new String[]{"a_Position"});
 
         // Load the texture
-        mTextureDataHandle = TextureHelper.loadTexture(mActivityContext, R.drawable.avatar);
+        mTextureDataHandle = TextureHelper.loadTexture(mActivityContext, R.drawable.avatar, true);
     }
 
     @Override
