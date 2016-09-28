@@ -28,6 +28,8 @@ public class LessonFourRenderer implements GLSurfaceView.Renderer {
 
     private final Context mActivityContext;
 
+    private boolean blending = true;
+
     /**
      * Store the model matrix. This matrix is used to move models from object space (where each model can be thought
      * of being located at the center of the universe) to world space
@@ -414,11 +416,23 @@ public class LessonFourRenderer implements GLSurfaceView.Renderer {
         // Set the background clear color to black
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-        // Use culling to remove back faces.
-        GLES20.glEnable(GLES20.GL_CULL_FACE);
+        if (blending) {
+            // No culling of back faces
+            GLES20.glDisable(GLES20.GL_CULL_FACE);
 
-        // Enable the depth testing
-        GLES20.glEnable(GLES20.GL_DEPTH_TEST);
+            // No depth testing
+            GLES20.glDisable(GLES20.GL_DEPTH_TEST);
+
+            // Enable blending
+            GLES20.glEnable(GLES20.GL_BLEND);
+            GLES20.glBlendFunc(GLES20.GL_ONE, GLES20.GL_ONE);
+        } else {
+            // Use culling to remove back faces.
+            GLES20.glEnable(GLES20.GL_CULL_FACE);
+
+            // Enable the depth testing
+            GLES20.glEnable(GLES20.GL_DEPTH_TEST);
+        }
 
         // Position the eye in front of the origin.
         final float eyeX = 0.0f;
@@ -482,7 +496,12 @@ public class LessonFourRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 gl10) {
-        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
+        if (blending) {
+            GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+        } else {
+            GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
+        }
+
 
         // Do a complete rotation every 10 seconds.
         long time = System.currentTimeMillis() % 10000L;
