@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lesson_six_min_filter_types">
+        <item>GL_NEAREST</item>
+        <item>GL_LINEAR</item>
+        <item>GL_NEAREST_MIPMAP_NEAREST</item>
+        <item>GL_NEAREST_MIPMAP_LINEAR</item>
+        <item>GL_LINEAR_MIPMAP_NEAREST</item>
+        <item>GL_LINEAR_MIPMAP_LINEAR</item>
+    </string-array>
+    <string-array name="lesson_six_mag_filter_types">
+        <item>GL_NEAREST</item>
+        <item>GL_LINEAR</item>
+    </string-array>
+
+</resources>

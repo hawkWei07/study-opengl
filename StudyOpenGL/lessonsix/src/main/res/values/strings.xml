@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LessonSix</string>
+    <string name="lesson_six">Lesson Six: Texture Filtering Modes</string>
+    <string name="lesson_six_subtitle">This lesson looks at the different texture filtering modes available in OpenGL ES.</string>
+    <string name="lesson_six_set_min_filter">Set min. filter</string>
+    <string name="lesson_six_set_mag_filter">Set mag. filter</string>
+    <string name="lesson_six_set_min_filter_message">Set GL_TEXTURE_MIN_FILTER</string>
+    <string name="lesson_six_set_mag_filter_message">Set GL_TEXTURE_MAG_FILTER</string>
+</resources>
